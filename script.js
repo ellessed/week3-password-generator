@@ -30,13 +30,19 @@ else if (length<8 || length>128) {
   window.alert("You must choose a password length between 8-128 characters");
   return;
 }
-
 options.numberOfChars = length;
+// set questions for the user to specify there password choice
+options.hasLowerChars = window.confirm("Would you like to include lower case characters?");
+options.hasUpperChars = window.confirm("Would you like to include UPPER case characters?");
+options.hasSpecialChars = window.confirm("Would you like to include special characters?");
+options.hasNumberChars = window.confirm("Would you like to include numbers?");
 
-//Ask if they would like lower case chars
-options.hasLowerChars = confirm("Would you like lower case characters");
+const charLower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+const charUpper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+const charSpec = ["!", "@", "#", "$", "%", "^", "&", "*", "+", "-", ".", "~", "|", "<", ">", "=", "_"];
+const charNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
-//create arrays
+var charList = [];
 }
 
 
