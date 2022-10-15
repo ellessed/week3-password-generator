@@ -123,29 +123,27 @@ function generatePassword() {
 
   if (options.hasLowerChars) {
     charLower.forEach((element) => charList.push(element));
-    //console.log(charList);
+    console.log(charList);
   }
 
   if (options.hasUpperChars) {
     charUpper.forEach((element) => charList.push(element));
-    //console.log(charList);
+    console.log(charList);
   }
 
   if (options.hasSpecialChars) {
     charSpec.forEach((element) => charList.push(element));
-    //console.log(charList);
+    console.log(charList);
   }
 
   if (options.hasNumberChars) {
     charNumber.forEach((element) => charList.push(element));
-    //console.log(charList);
+    console.log(charList);
   }
 
   var passwordMake = [];
   for (var i = 0; i < options.numberOfChars; i++) {
     var randomIndex = Math.floor(Math.random() + charList.length);
-
-    console.log(Math.floor(Math.random() + charList.length));
 
     passwordMake.push(charList[randomIndex]);
   }
