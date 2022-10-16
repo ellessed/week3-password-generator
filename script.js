@@ -150,7 +150,7 @@ function generatePassword() {
     console.log(charList);
   }
 
-  // The for loop will start from 0 until it reaches the number of characters the user has entered but the loop will stop when it returns false.
+  // The for loop will start from 0 until it reaches the number of characters the user has entered. The loop will stop when it returns false.
   // The Math.random will return the number that's greater than or equal to 0 and less than 1.
   // The Math.floor function always rounds down and returns the largest integer less than or equal to a given number.
   var FinalPassword = [];
