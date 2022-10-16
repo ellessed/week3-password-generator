@@ -8,7 +8,7 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
+// set to basic
 function generatePassword() {
   var options = {
     numberOfChars: 0,
@@ -18,30 +18,38 @@ function generatePassword() {
     hasNumberChars: false,
   };
 
-  // validate the length that the user has entered
-  var length = window.prompt("How long would you like your password to be?");
-  // if the answer is not a number the following alert will appear
+  // Validate the length that the user has entered
+  var length = window.prompt(
+    "How many characters would you like your password to contain?"
+  );
+  // If the answer is not a number the following alert will appear
   if (isNaN(length)) {
     window.alert("You must enter a valid number");
     return;
   } else if (length < 8 || length > 128) {
-    window.alert("You must choose a password length between 8-128 characters");
+    window.alert(
+      "You must choose a password length between 8 and 128 characters"
+    );
     return;
   }
   options.numberOfChars = length;
-  // set questions for the user to specify there password choice
+
+  // Sets a confirmation for the user to specify there password choice
   options.hasLowerChars = window.confirm(
-    "Would you like to include lower case characters?"
+    "Click OK to confirm including lowercase characters"
   );
   options.hasUpperChars = window.confirm(
-    "Would you like to include UPPER case characters?"
+    "Click OK to confirm including uppercase characters"
   );
   options.hasSpecialChars = window.confirm(
-    "Would you like to include special characters?"
+    "Click OK to confirm including special characters"
   );
-  options.hasNumberChars = window.confirm("Would you like to include numbers?");
+  options.hasNumberChars = window.confirm(
+    "Click OK to confirm including numeric characters"
+  );
 
-  const charLower = [
+  // The password choices the user can include are lowercase,upercase,special and numeric characters
+  var charLower = [
     "a",
     "b",
     "c",
@@ -70,7 +78,7 @@ function generatePassword() {
     "z",
   ];
 
-  const charUpper = [
+  var charUpper = [
     "A",
     "B",
     "C",
@@ -98,7 +106,7 @@ function generatePassword() {
     "Y",
     "Z",
   ];
-  const charSpec = [
+  var charSpec = [
     "!",
     "@",
     "#",
@@ -117,10 +125,11 @@ function generatePassword() {
     "=",
     "_",
   ];
-  const charNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
+  var charNumber = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
   var charList = [];
 
+  // The user will specifiy what they would like to include in there password from clicking 'OK' i.e assuming it is true the if statements will push the users choices into the charlist to generate the password.
   if (options.hasLowerChars) {
     charLower.forEach((element) => charList.push(element));
     console.log(charList);
@@ -141,14 +150,17 @@ function generatePassword() {
     console.log(charList);
   }
 
-  var passwordMake = [];
+  // The for loop will start from 0 until it reaches the number of characters the user has entered but the loop will stop when it returns false.
+  // The Math.random will return the number that's greater than or equal to 0 and less than 1.
+  // The Math.floor function always rounds down and returns the largest integer less than or equal to a given number.
+  var FinalPassword = [];
   for (var i = 0; i < options.numberOfChars; i++) {
-    var randomIndex = Math.floor(Math.random() + charList.length);
+    var randomIndex = Math.floor(Math.random() * charList.length);
 
-    passwordMake.push(charList[randomIndex]);
+    FinalPassword.push(charList[randomIndex]);
   }
 
-  return passwordMake.join("");
+  return FinalPassword.join("");
 }
 
 // Add event listener to generate button
