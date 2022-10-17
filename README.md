@@ -1,6 +1,8 @@
 # week3-password-generator
 
-This project will contain a
+This project will feature a password generator powered by JavaScript code.
+The primary driving force for working on this project was a desire to take on a difficult task as a junior developer into a fascinating area of back end developmennt.
+It was interesting to have the chance to put what I had learnt in class into practice particularly as back end development is an area I have a keen interest in and an area of coding I would like to pursue!
 
 ## User Story
 
