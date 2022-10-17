@@ -35,6 +35,10 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Deployed Page
 
+Please find deployed page below
+
+https://ellessed.github.io/week3-password-generator/
+
 ## License
 
 NA
