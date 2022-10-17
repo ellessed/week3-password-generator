@@ -30,10 +30,12 @@ THEN the password is either displayed in an alert or written to the page
 
 ## Password Generator
 
-````md
-![alt text](images/screencapture1-file-User.png)
+![alt text](images/screenshot1.png)
 
 ```
 
 ```
-````
+
+```
+
+```
